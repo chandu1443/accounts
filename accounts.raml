@@ -1,0 +1,61 @@
+#%RAML 0.8
+baseUri: https://mocksvc.mulesoft.com/mocks/144b9f69-90e2-4a64-8e32-ab157a47dbe1
+title: accounts
+version: v1
+/accounts:
+  displayName: Accounts
+  /{accountId}:
+    displayName: Get Acccount Info By ID
+    get:
+     responses: 
+       200:
+         body: 
+           application/json:
+    /availableNumbers:
+      displayName: Get Site by ID
+      get:
+        queryParameters: 
+          areaCode:
+           required: true
+          quantity :
+           required: true
+          enableTNDetail:
+           required: true
+        responses: 
+          200:
+            body: 
+              application/json:
+    /orders:
+      displayName: create a order and get order details
+      get:
+        description: get order details
+        queryParameters: 
+          page:
+          size:
+        responses: 
+          200:
+            body: 
+              application/json:
+      post:
+        description: Create a order
+        body: 
+          application/json:
+          application/xml:
+        responses: 
+          200:
+            body: 
+              application/json:
+    /sites:
+      displayName: get site information
+      get:
+        queryParameters: 
+          siteId:
+           required: true
+          sippeers:
+           required: true
+          tns:
+           required: true
+        responses: 
+          200:
+            body: 
+              application/json:
